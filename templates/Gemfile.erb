@@ -1,0 +1,44 @@
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby "<%= Hatate::RUBY_VERSION %>"
+
+# Rails defaults
+gem "rails", "~> 7.0.4", ">= 7.0.4.3"
+
+## Database
+gem "pg"
+
+## Web server
+gem "puma"
+
+## Asset pipeline
+gem "propshaft"
+gem "importmap-rails"
+gem "tailwindcss-rails"
+
+## Hotwire
+gem "stimulus-rails"
+gem "turbo-rails"
+
+## Other
+gem "bootsnap", require: false
+gem "redis"
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+
+group :development do
+  gem "web-console"
+  gem "rack-mini-profiler"
+end
+
+group :development, :test do
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails"
+  gem "rspec-rails"
+  gem "standard"
+end
+
+group :test do
+  gem "capybara"
+  gem "cuprite"
+end

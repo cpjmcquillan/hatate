@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Connor McQuillan"]
   spec.email = ["me@cpjmcquillan.com"]
 
-  spec.summary = "Generate a Rails application just how I like it."
+  spec.summary = "Generate a Rails application with this opinionated generator."
 
   spec.description = <<~HERE
     Hatate is an opinionated Ruby on Rails application generator. It makes a
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.homepage = "https://github.com/cpjmcquillan/hatate"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.required_ruby_version = "~> #{Hatate::RUBY_VERSION}"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage

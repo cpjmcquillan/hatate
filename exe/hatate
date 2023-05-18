@@ -1,5 +1,14 @@
 #!/usr/bin/env ruby
 
+require "pathname"
+
+source_path = File.expand_path("#{Pathname.new(__FILE__).dirname}/../lib")
+$LOAD_PATH << source_path
+
 require "hatate"
 
-puts "Hello world!"
+templates_root = File.expand_path(File.join("..", "templates"), File.dirname(__FILE__))
+Hatate::AppGenerator.source_root(templates_root)
+Hatate::AppGenerator.source_paths << Rails::Generators::AppGenerator.source_root << templates_root
+
+Hatate::AppGenerator.start
